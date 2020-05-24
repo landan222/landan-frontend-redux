@@ -1,19 +1,19 @@
-var cNumberReducer = function(state = 0, actions) {
+var cNumberReducer = function(iState = 0, oAction) {
 
- switch (actions.type) {
+ switch (oAction.type) {
 	 case 'ADD_NUMBER':
-	 	state = state + 1;
+	 	iState = iState + 1;
 	 	break;
 	 case 'SUB_NUMBER':
-	 	state = state - 1;
+	 	iState = iState - 1;
 	 	break;
 	 case 'INIT_NUMBER':
-	 	state = 0;
+	 	iState = 0;
 	 default:
-	 	state = state;
+	 	iState = iState;
 	 	break;
 	 }
- 	return state;
+ 	return iState;
  }
 
  var cReducer = Redux.combineReducers({
