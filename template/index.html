@@ -19,12 +19,12 @@
 		</header>
 
 		<div class="container clearfix p-4">
-			<main class="float-left">
+			<main class="float-left index">
 
 				<section class="number-wrraper border p-3 rounded">
-					<div class="title text-text mb-1">
+					<h3 class="title text-text mb-1">
 						加減記數器
-					</div>
+					</h3>
 	
 					<div class="mb-4">
 
@@ -42,7 +42,10 @@
 
 				<section class="users-wrapper border p-3 mt-4 rounded">
 	
-					<div>
+					<h3 class="title text-text mb-1">
+						模擬 AJAX 異動 用戶資料
+					</h3>
+					<div class="mb-4">
 
 						<button id="get" type="button" class="btn btn-primary mr-1">AJAX GET USER</button>
 						<button id="post" type="button" class="btn btn-primary mr-1">AJAX POST USER</button>
@@ -50,11 +53,20 @@
 						<button id="delete" type="button" class="btn btn-danger">AJAX DELETE USER</button>						
 					</div>
 
-					<div id="users">
-						<div id="user">
-							<span class="id">1</span>
-							<span class="name">Tom</span>
-							<span class="age">22</span>
+					<div class="users table">
+						<div class="tr clearfix text-center font-weight-bold">
+							<span class="th float-left border-right border-bottom">ID</span>
+							<span class="th float-left">姓名</span>
+							<span class="th float-left">性別</span>
+							<span class="th float-left">年齡</span>
+							<span class="th float-left">居住地</span>
+							<span class="th float-left">職業</span>
+							<span class="th float-left">電話</span>
+						</div>
+						<div class="user tr">
+							<span class="td">1</span>
+							<span class="td">Tom</span>
+							<span class="td">22</span>
 						</div>						
 					</div>
 

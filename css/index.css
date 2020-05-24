@@ -2,6 +2,11 @@ main {
 	width: 70%;
 }
 
+main.index section.users-wrapper .table .tr .th, 
+main.index section.users-wrapper .table .tr .td {
+	width: calc( 100% / 7 );
+}
+
 aside {
 	width: 30%;
 }
