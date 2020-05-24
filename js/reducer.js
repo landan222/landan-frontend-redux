@@ -9,7 +9,17 @@ var cNumberReducer = function(iNumber = 0, oAction) {
 	 	break;
 	 case 'INIT_NUMBER':
 		_iNumber = 0;
-	 default:
+		break;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+		// 不要忘记写了 break, 永远跑了 defualt;
+
+		default:
 		_iNumber = iNumber;
 	 	break;
 	 }
@@ -43,7 +53,6 @@ var cNumberReducer = function(iNumber = 0, oAction) {
 			return _aUsers;
 
 		case 'DELETE_USERS':
-			debugger;
 			var __aUsers = oAction.payload;
 			var __oUser = __aUsers.pop();
 			var _iIndex;

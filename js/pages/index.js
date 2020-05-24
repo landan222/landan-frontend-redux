@@ -185,6 +185,15 @@ $( window.document ).ready(function() {
 
   });
 
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
+  // store.subscribe(function(){}), 重点 统一的渲染机制 ， 可控 避免跑版 乱掉 等 前端 BUG!!
 
   store.subscribe(function() {
 
@@ -229,7 +238,6 @@ $( window.document ).ready(function() {
       var oUsers = aUsers[iIndex];
       sUsers = sUsers + cUserComponent(oUsers);
     }
-    debugger;
 
     $('section.users-wrapper .users .user').remove();
     $('section.users-wrapper .users').append(sUsers);
