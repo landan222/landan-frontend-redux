@@ -73,7 +73,7 @@ $( window.document ).ready(function() {
     }
   ];
 
-  $(window.document).on('click', 'section.number-wrraper #add', function (oEvent) {
+  $(window.document).on('click', 'section.number-wrapper #add', function (oEvent) {
     
     var oStore = {
       type: 'ADD_NUMBER',
@@ -85,7 +85,7 @@ $( window.document ).ready(function() {
   });
 
 
-  $(window.document).on('click', 'section.number-wrraper #sub', function (oEvent) {
+  $(window.document).on('click', 'section.number-wrapper #sub', function (oEvent) {
     
     var oStore = {
       type: 'SUB_NUMBER',
@@ -96,7 +96,7 @@ $( window.document ).ready(function() {
 
   });
 
-  $(window.document).on('click', 'section.number-wrraper #init', function (oEvent) {
+  $(window.document).on('click', 'section.number-wrapper #init', function (oEvent) {
     
     var oStore = {
       type: 'INIT_NUMBER',
@@ -113,7 +113,7 @@ $( window.document ).ready(function() {
     var oState = store.getState();
         var iNumber = oState.number;
         var sNumberComponent = iNumber;
-     $('section.number-wrraper #number').html(sNumberComponent);
+     $('section.number-wrapper #number').html(sNumberComponent);
   });
 
 
