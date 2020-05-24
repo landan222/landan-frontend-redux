@@ -216,7 +216,7 @@ $( window.document ).ready(function() {
      /* -----------------------------------------------------  */
 
     var iNumber = oState.number;
-    var cNumberComponet = function (){
+    var cNumberComponent = function (){
       // 因为同时使用了 MVC， 与 REDUX 这里必须要写两次 HTML
       // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
       // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
@@ -236,7 +236,7 @@ $( window.document ).ready(function() {
        '</span>';
       return sComponent;
     };
-     $('section.number-wrapper #number').html(cNumberComponet(iNumber));
+     $('section.number-wrapper #number').html(cNumberComponent(iNumber));
 
 
      /* -----------------------------------------------------  */
