@@ -107,16 +107,40 @@ $( window.document ).ready(function() {
 
   });
 
+  $(window.document).on('click', 'section.users-wrapper #get', function (oEvent) {
+    
+    var oStore = {
+      type: 'GET_USERS',
+      payload: aUsers
+    };
+    
+     store.dispatch(oStore);
+
+  });
+
 
   store.subscribe(function() {
 
     var oState = store.getState();
-        var iNumber = oState.number;
-        var sNumberComponent = '<span>' + 
-                                  iNumber +
-                               '</span>';
-                               
-     $('section.number-wrapper #number').html(sNumberComponent);
+
+    var iNumber = oState.number;
+    var cNumberComponet = function (){
+
+      // 记得对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      var sComponent = '<span>' + 
+                          iNumber +
+                        '</span>';
+      return sComponent;
+    };
+
+
+     $('section.number-wrapper #number').html(cNumberComponet(iNumber));
+
+    var aUsers = oState.users;
+
+
+
+
   });
 
 
