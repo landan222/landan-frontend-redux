@@ -10,6 +10,7 @@ $( window.document ).ready(function() {
   // *. 测试 redux 是否 无 BUG 可以直接 store.dispatch .... 直接丢数据 看看  ， 不需透过 click , ajax event (就是直接 呼叫 136 行)
   // *. 之后 AJAX 加入之后  避免 callback hell , 必须使用 $.deferred promise
   // *. 前端的 重点是啥么？ 就是 自己 用 假的 json 数据（如果可以格式先跟 后端要）， 完成 1, *, 3, 4, 5 的代码
+  // *. 2的后端格式一定要 跟 后端询问！！！！！！！！！！！！！！！！
   $(window.document).on('click', 'section.number-wrapper #add', function (oEvent) {
     
     var oStore = {
