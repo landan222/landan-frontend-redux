@@ -22,8 +22,11 @@
 			<main class="float-left">
 
 				<section class="number-wrraper border p-3 rounded">
+					<div class="title text-text mb-1">
+						加減記數器
+					</div>
 	
-					<div class="mb-2">
+					<div class="mb-4">
 
 						<button id="add" type="button" class="btn btn-primary mr-1">ADD</button>
 						<button id="sub" type="button" class="btn btn-primary mr-1">SUB</button>						
@@ -41,8 +44,10 @@
 	
 					<div>
 
-						<button id="get">AJAX GET USER</button>
-						<button id="delete">AJAX DELETE USER</button>						
+						<button id="get" type="button" class="btn btn-primary mr-1">AJAX GET USER</button>
+						<button id="post" type="button" class="btn btn-primary mr-1">AJAX POST USER</button>
+						<button id="put" type="button" class="btn btn-primary mr-1">AJAX PUT USER</button>
+						<button id="delete" type="button" class="btn btn-danger">AJAX DELETE USER</button>						
 					</div>
 
 					<div id="users">
@@ -58,9 +63,12 @@
 				</section>
 			</main>
 			<aside class="float-left px-2">
-				<section class="border rounded p-2 h-100">
-					我是側邊
-				</section>
+				<div class="aside-pseudo border rounded p-2 h-100">
+					<section class="">
+						我是側邊
+					</section>
+				</div>
+
 			</aside>
 		</div>
 
