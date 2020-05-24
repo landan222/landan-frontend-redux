@@ -2,7 +2,13 @@ main.index {
   width: 70%;
   section.users-wrapper {
     .table {
+
+
+
       .tr {
+        &:first-child{
+          background-color: #dddddd;
+        }
         .th, td {
           width: calc( 100% / 7 );
 
