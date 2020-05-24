@@ -30,20 +30,38 @@ var cNumberReducer = function(iNumber = 0, oAction) {
 			_aUsers = aUsers.concat(oAction.payload);
 			break;
 		case 'PUT_USERS':
-			_aUsers;
 			var __aUsers = oAction.payload;
 			var __oUser = __aUsers.pop();
 			for (var iIndex = 0; iIndex < aUsers.length; iIndex++) {
 				if(aUsers[iIndex].user_id == __oUser.user_id) {
-					debugger;
+					
 					aUsers[iIndex] = Object.assign(aUsers[iIndex], __oUser);
+					break;
 				}
 			}
 			_aUsers = aUsers;
 			return _aUsers;
 
 		case 'DELETE_USERS':
-			_aUsers;
+			debugger;
+			var __aUsers = oAction.payload;
+			var __oUser = __aUsers.pop();
+			var _iIndex;
+			for (var iIndex = 0; iIndex < aUsers.length; iIndex++) {
+				if(aUsers[iIndex].user_id == __oUser.user_id) {
+					_iIndex = iIndex;
+					break;
+				}
+			}
+			if (_iIndex >= 0 && _iIndex + 1 <= aUsers.length) {
+				_aUsers = aUsers.slice(0, _iIndex).concat(aUsers.slice(_iIndex + 1, aUsers.length));
+				
+			}
+
+			if (_iIndex >= 0 && _iIndex == aUsers.length) {
+				_aUsers = aUsers.slice(0, _iIndex);
+			}
+			return _aUsers;
 		default:
 			_aUsers = aUsers;
 			break;

@@ -167,6 +167,24 @@ $( window.document ).ready(function() {
 
   });
 
+  $(window.document).on('click', 'section.users-wrapper #delete', function (oEvent) {
+    // [oUsers], 模拟 AJAX DELETE 后 id = 1 ，服务器返回的 一笔修改后 的 users 资料
+    // 并异动到 store 里面， 再透过 store 统一渲染
+    // 目前示意, 就架设 发请求到后端 改了 user_id = 1 的
+    var oUser = {
+      user_id: 1,
+    };
+
+    var aUsers = [oUser];
+    var oStore = {
+      type: 'DELETE_USERS',
+      payload: aUsers
+    };
+    
+     store.dispatch(oStore);
+
+  });
+
 
   store.subscribe(function() {
 
