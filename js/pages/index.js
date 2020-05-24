@@ -11,6 +11,14 @@ $( window.document ).ready(function() {
   // *. 之后 AJAX 加入之后  避免 callback hell , 必须使用 $.deferred promise
   // *. 前端的 重点是啥么？ 就是 自己 用 假的 json 数据（如果可以格式先跟 后端要）， 完成 1, *, 3, 4, 5 的代码
   // *. 2的后端格式一定要 跟 后端询问！！！！！！！！！！！！！！！！
+
+
+  // *. 如何解耦？ js event 事件触发交互, 
+  //               后端提供数据  
+  //               reducer 做数据过滤
+  //               store subscribe 做 绚烂
+  
+  
   $(window.document).on('click', 'section.number-wrapper #add', function (oEvent) {
     
     var oStore = {
