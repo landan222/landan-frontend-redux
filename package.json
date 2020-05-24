@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build-css": "node-sass-chokidar css -o css --output-style compressed --source-map css",
+    "watch-css": "yarn run build-css && node-sass-chokidar css -o statics/csspatch --output-style compressed --watch --recursive --source-map css --usePolling",
+    "build-post": "postcss css/*.css -r"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "node-sass": "^4.14.1",
+    "node-sass-chokidar": "^1.4.0",
+    "postcss-cli": "^7.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
+
+ 
