@@ -112,7 +112,10 @@ $( window.document ).ready(function() {
 
     var oState = store.getState();
         var iNumber = oState.number;
-        var sNumberComponent = iNumber;
+        var sNumberComponent = '<span>' + 
+                                  iNumber +
+                               '</span>';
+                               
      $('section.number-wrapper #number').html(sNumberComponent);
   });
 
