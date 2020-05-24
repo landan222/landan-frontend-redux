@@ -7,6 +7,8 @@ $( window.document ).ready(function() {
   // 4. reducer 根据 3 来的数据 与 type 来使用不同的 reducer 做 数据处理（插入排序 改字段 等）
   // 5. store.subscribe, 根据这些 “数据事件”， “统一统一统一统一统一统一统一渲染”
 
+  // *. 测试 redux 是否 无 BUG 可以直接 store.dispatch .... 直接丢数据 看看  ， 不需透过 click , ajax event (就是直接 呼叫 136 行)
+  // *. 之后 AJAX 加入之后  避免 callback hell , 必须使用 $.deferred promise
 
   $(window.document).on('click', 'section.number-wrapper #add', function (oEvent) {
     
