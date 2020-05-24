@@ -1,5 +1,12 @@
 $( window.document ).ready(function() {
 
+  // 运作原理
+  // 1. 前端 html 触发 点击 click 事件 
+  // 2. click 事件 触发 AJAX 请求 后端数据， （略）
+  // 3. store 分发 (dispatch) 这个后端数据，触发 “数据 异动事件”， 并带上 type, 以便 reducer 使用
+  // 4. reducer 根据 3 来的数据 与 type 来使用不同的 reducer 做 数据处理（插入排序 改字段 等）
+  // 5. store.subscribe, 根据这些 “数据事件”， “统一统一统一统一统一统一统一渲染”
+
 
   $(window.document).on('click', 'section.number-wrapper #add', function (oEvent) {
     
@@ -35,7 +42,10 @@ $( window.document ).ready(function() {
 
   });
 
+
+  // 1. 前端 html 触发 点击 click 事件 
   $(window.document).on('click', 'section.users-wrapper #get', function (oEvent) {
+    // 2. click 事件 触发 AJAX 请求 后端数据，  这一步骤 “省略” ！！
 
     var aUsers = [
       {
@@ -119,7 +129,9 @@ $( window.document ).ready(function() {
       payload: aUsers
     };
     
-     store.dispatch(oStore);
+    // 3. store 分发 (dispatch) 这个后端数据，触发 “数据 异动事件”， 并带上 type, 以便 reducer 使用
+
+    store.dispatch(oStore);
 
   });
 
@@ -204,6 +216,17 @@ $( window.document ).ready(function() {
     var cNumberComponet = function (){
       // 因为同时使用了 MVC， 与 REDUX 这里必须要写两次 HTML
       // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+
       var sComponent = '' + 
        '<span>' + 
          iNumber +

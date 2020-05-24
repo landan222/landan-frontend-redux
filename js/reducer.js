@@ -33,6 +33,7 @@ var cNumberReducer = function(iNumber = 0, oAction) {
 	// oAction.payload AJAX 事件发生后 从服务器来的 users 资料
 	switch (oAction.type) {
 		case 'GET_USERS':
+			  // 4. reducer 根据 3 来的数据 与 type 来使用不同的 reducer 做 数据处理（插入排序 改字段 等）
 			_aUsers = oAction.payload;
 			break;
 		case 'POST_USERS':
