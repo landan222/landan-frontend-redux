@@ -1,5 +1,10 @@
 main.index {
   width: 70%;
+  section.number-wrapper {
+    .number {
+      font-size: 20vmin;
+    }
+  }
   section.users-wrapper {
     .table {
       .tr {
