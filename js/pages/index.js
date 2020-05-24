@@ -258,7 +258,7 @@ $( window.document ).ready(function() {
       return sComponent;
     };
 
-    let sUsers = '';
+    var sUsers = '';
 
     for(var iIndex = 0; iIndex < aUsers.length; iIndex++) {
       var oUsers = aUsers[iIndex];
