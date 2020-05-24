@@ -1,32 +1,41 @@
-var cNumberReducer = function(iState = 0, oAction) {
-
+var cNumberReducer = function(iNumber = 0, oAction) {
+	var _iNumber;
  switch (oAction.type) {
 	 case 'ADD_NUMBER':
-	 	iState = iState + 1;
+		_iNumber = iNumber + 1;
 	 	break;
 	 case 'SUB_NUMBER':
-	 	iState = iState - 1;
+		_iNumber = iNumber - 1;
 	 	break;
 	 case 'INIT_NUMBER':
-	 	iState = 0;
+		_iNumber = 0;
 	 default:
-	 	iState = iState;
+		_iNumber = iNumber;
 	 	break;
 	 }
- 	return iState;
+ 	return _iNumber;
  }
 
  var cUsersReducer = function(aUsers = [], oAction) {
 	var _aUsers = [];
+	// _aUsers , 最后决定的 users 资料
+	// aUsers. AJAX 事件发生前 users 原本状态的资料
+	// oAction.payload AJAX 事件发生后 从服务器来的 users 资料
 	switch (oAction.type) {
 		case 'GET_USERS':
-			_aUsers = aUsers;
+			_aUsers = oAction.payload;
 			break;
 		case 'POST_USERS':
-			_aUsers = aUsers - 1;
+			// 如果需要， 在这里做 资料的排序！！
+			_aUsers = aUsers.concat(oAction.payload);
 			break;
 		case 'PUT_USERS':
 			_aUsers;
+
+			for () {
+
+			}
+
 		case 'DELETE_USERS':
 			_aUsers;
 		default:

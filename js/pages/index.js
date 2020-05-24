@@ -62,7 +62,8 @@ $( window.document ).ready(function() {
       location: '天津',
       job: '学生',
       tell: '0971-222-333'
-    },    {
+    },
+    {
       user_id: 8,
       name: 'Ivy Cheng',
       sex: '女',
@@ -108,9 +109,53 @@ $( window.document ).ready(function() {
   });
 
   $(window.document).on('click', 'section.users-wrapper #get', function (oEvent) {
-    
+    // aUsers, 模拟 AJAX GET 后 服务器返回的 users 资料
+    // 并更新到 store 里面， 再透过 store 统一渲染
     var oStore = {
       type: 'GET_USERS',
+      payload: aUsers
+    };
+    
+     store.dispatch(oStore);
+
+  });
+
+  $(window.document).on('click', 'section.users-wrapper #post', function (oEvent) {
+    // [oUsers], 模拟 AJAX POST 后 服务器返回的 一笔新增 的 users 资料
+    // 并新增到 store 里面， 再透过 store 统一渲染
+    var oUser = {
+      user_id: 18,
+      name: '大魔王',
+      sex: '无',
+      age: 9999,
+      location: '地狱',
+      job: '无边无际',
+      tell: '0944-444-444'
+    };
+
+    var aUsers = [oUser];
+    var oStore = {
+      type: 'POST_USERS',
+      payload: aUsers
+    };
+    
+     store.dispatch(oStore);
+
+  });
+
+
+  $(window.document).on('click', 'section.users-wrapper #put', function (oEvent) {
+    // [oUsers], 模拟 AJAX PUT 后 id = 3 ，服务器返回的 一笔修改后 的 users 资料
+    // 并异动到 store 里面， 再透过 store 统一渲染
+    var oUser = {
+      user_id: 3,
+      name: '改名了好多次',
+      tell: '0977-777-777'
+    };
+
+    var aUsers = [oUser];
+    var oStore = {
+      type: 'POST_USERS',
       payload: aUsers
     };
     
@@ -122,22 +167,50 @@ $( window.document ).ready(function() {
   store.subscribe(function() {
 
     var oState = store.getState();
+     /* -----------------------------------------------------  */
 
     var iNumber = oState.number;
     var cNumberComponet = function (){
+      // 因为同时使用了 MVC， 与 REDUX 这里必须要写两次 HTML
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      var sComponent = '' + 
+       '<span>' + 
+         iNumber +
+       '</span>';
+      return sComponent;
+    };
+     $('section.number-wrapper #number').html(cNumberComponet(iNumber));
 
-      // 记得对齐缩排！！！！！！！！！！！！！！！！！！！！！！
-      var sComponent = '<span>' + 
-                          iNumber +
-                        '</span>';
+
+     /* -----------------------------------------------------  */
+    var aUsers = oState.users;
+    var cUserComponent = function(oUser) {
+      // 因为同时使用了 MVC， 与 REDUX 这里必须要写两次 HTML
+      // 记得符合 HTML 标签语法 对齐缩排！！！！！！！！！！！！！！！！！！！！！！
+      var sComponent = '' + 
+        '<div class="user tr clearfix text-center">' +
+          '<span class="td float-left border-right border-bottom border-light">' + (oUser.user_id || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light text-truncate">' + (oUser.name || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light">' + (oUser.sex || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light">' + (oUser.age || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light">' + (oUser.location || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light">' + (oUser.job || '-') + '</span>' +
+          '<span class="td float-left border-right border-bottom border-light text-right pr-2">' + (oUser.tell || '-') + '</span>' +
+        '</div>';
+
       return sComponent;
     };
 
+    let sUsers = '';
 
-     $('section.number-wrapper #number').html(cNumberComponet(iNumber));
+    for(var iIndex = 0; iIndex < aUsers.length; iIndex++) {
+      var oUsers = aUsers[iIndex];
+      sUsers = sUsers + cUserComponent(oUsers);
+    }
+    debugger;
 
-    var aUsers = oState.users;
-
+    $('section.users-wrapper .users .user').remove();
+    $('section.users-wrapper .users').append(sUsers);
 
 
 
