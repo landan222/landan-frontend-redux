@@ -2,16 +2,20 @@ main.index {
   width: 70%;
   section.users-wrapper {
     .table {
-
-
-
       .tr {
         &:first-child{
-          background-color: #dddddd;
+          background-color: #eeeeee;
         }
-        .th, td {
-          width: calc( 100% / 7 );
-
+        .th, .td {
+          width: calc( 12% );
+          height: 2rem;
+          line-height: 2rem;
+          &:first-child {
+            border-left: 1px solid #f8f9fa !important;
+          }
+          &:last-child {
+            width: calc( 100% - 12% * 6);
+          }
         }
       }
     }
