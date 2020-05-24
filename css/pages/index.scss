@@ -1,0 +1,14 @@
+main.index {
+  width: 70%;
+  section.users-wrapper {
+    .table {
+      .tr {
+        .th, td {
+          width: calc( 100% / 7 );
+
+        }
+      }
+    }
+  }
+}
+
