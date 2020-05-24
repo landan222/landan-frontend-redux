@@ -4,7 +4,7 @@ $( window.document ).ready(function() {
   // 1. 前端 html 触发 点击 click 事件 
   // 2. click 事件 触发 AJAX 请求 后端数据， （略）
   // 3. store 分发 (dispatch) 这个后端数据，触发 “数据 异动事件”， 并带上 type, 以便 reducer 使用
-  // 4. reducer 根据 3 来的数据 与 type 来使用不同的 reducer 做 数据处理（插入排序 改字段 等）
+  // 4. js/reducer.js 根据 3 来的数据 与 type 来使用不同的 reducer 做 数据处理（插入排序 改字段 等）
   // 5. store.subscribe, 根据这些 “数据事件”， “统一统一统一统一统一统一统一渲染”
 
   // *. 测试 redux 是否 无 BUG 可以直接 store.dispatch .... 直接丢数据 看看  ， 不需透过 click , ajax event (就是直接 呼叫 136 行)
