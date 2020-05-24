@@ -48,7 +48,7 @@ $( window.document ).ready(function() {
 
   // 1. 前端 html 触发 点击 click 事件 
   $(window.document).on('click', 'section.users-wrapper #get', function (oEvent) {
-    // 2. click 事件 触发 AJAX 请求 后端数据，  这一步骤 “省略” ！！
+    // 2. click 事件 触发 AJAX 请求 后端数据，  （AJAX 这一步骤 “省略” ！！)
 
     var aUsers = [
       {
@@ -139,7 +139,7 @@ $( window.document ).ready(function() {
   });
 
   $(window.document).on('click', 'section.users-wrapper #post', function (oEvent) {
-    // [oUsers], 模拟 AJAX POST 后 服务器返回的 一笔新增 的 users 资料
+    // [oUsers], 模拟 AJAX POST 后 服务器返回的 一笔新增 的 users 资料, （AJAX 这一步骤 “省略” ！！)
     // 并新增到 store 里面， 再透过 store 统一渲染
     var oUser = {
       user_id: 18,
@@ -163,7 +163,7 @@ $( window.document ).ready(function() {
 
 
   $(window.document).on('click', 'section.users-wrapper #put', function (oEvent) {
-    // [oUsers], 模拟 AJAX PUT 后 id = 3 ，服务器返回的 一笔修改后 的 users 资料
+    // [oUsers], 模拟 AJAX PUT 后 id = 3 ，服务器返回的 一笔修改后 的 users 资料  （AJAX 这一步骤 “省略” ！！)
     // 并异动到 store 里面， 再透过 store 统一渲染
     // 目前示意, 就架设 发请求到后端 改了 user_id = 3 的
     var oUser = {
