@@ -1,31 +1,46 @@
 $( window.document ).ready(function() {
 
-	$('#add').click(function() {
+	$(window.document).on('click', 'section.number-wrraper #add', function (oEvent) {
+		
 		var oStore = {
-			type: 'ADD',
-			payload: 0
+			type: 'ADD_NUMBER',
+			payload: {}
 		};
 		
 	 	store.dispatch(oStore);
+
 	});
 
-	$('#sub').click(function() {
+
+	$(window.document).on('click', 'section.number-wrraper #sub', function (oEvent) {
+		
 		var oStore = {
-			type: 'SUB',
-			payload: 0
+			type: 'SUB_NUMBER',
+			payload: {}
 		};
 		
 	 	store.dispatch(oStore);
+
+	});
+
+	$(window.document).on('click', 'section.number-wrraper #init', function (oEvent) {
+		
+		var oStore = {
+			type: 'INIT_NUMBER',
+			payload: {}
+		};
+		
+	 	store.dispatch(oStore);
+
 	});
 
 
 	store.subscribe(function() {
 
-		debugger;
 		var oState = store.getState();
-        var iNumber = oState.number || 0;
-        var sComponent = iNumber;
-	 	$('#number').html(sComponent);
+        var iNumber = oState.number;
+        var sNumberComponent = iNumber;
+	 	$('section.number-wrraper #number').html(sNumberComponent);
 	});
 
 
