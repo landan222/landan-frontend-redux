@@ -147,6 +147,7 @@ $( window.document ).ready(function() {
   $(window.document).on('click', 'section.users-wrapper #put', function (oEvent) {
     // [oUsers], 模拟 AJAX PUT 后 id = 3 ，服务器返回的 一笔修改后 的 users 资料
     // 并异动到 store 里面， 再透过 store 统一渲染
+    // 目前示意, 就架设 发请求到后端 改了 user_id = 3 的
     var oUser = {
       user_id: 3,
       name: '改名了好多次',
@@ -155,7 +156,7 @@ $( window.document ).ready(function() {
 
     var aUsers = [oUser];
     var oStore = {
-      type: 'POST_USERS',
+      type: 'PUT_USERS',
       payload: aUsers
     };
     

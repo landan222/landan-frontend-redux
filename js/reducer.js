@@ -31,10 +31,16 @@ var cNumberReducer = function(iNumber = 0, oAction) {
 			break;
 		case 'PUT_USERS':
 			_aUsers;
-
-			for () {
-
+			var __aUsers = oAction.payload;
+			var __oUser = __aUsers.pop();
+			for (var iIndex = 0; iIndex < aUsers.length; iIndex++) {
+				if(aUsers[iIndex].user_id == __oUser.user_id) {
+					debugger;
+					aUsers[iIndex] = Object.assign(aUsers[iIndex], __oUser);
+				}
 			}
+			_aUsers = aUsers;
+			return _aUsers;
 
 		case 'DELETE_USERS':
 			_aUsers;
